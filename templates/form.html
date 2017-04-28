@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form>
+        <p>
+            Story title<br>
+            <input type="text" name="story_title">
+        </p>
+        <p>
+            User story<br>
+            <input type="text" name="user_story">
+        </p>
+        <p>
+            Acceptance criteria<br>
+            <input type="text" name="acceptance_criteria">
+        </p>
+        <p>
+            Business value<br>
+            <input type="number" name="business_value" step="100" min="100" max="1500">
+        </p>
+        <p>
+            Estimation<br>
+            <input type="number" name="estimation" step="0.5" min="0.5" max="40">
+        </p>
+        <p>
+            Status<br>
+            <select>
+                <option value="planning">Planning</option>
+                <option value="todo">TODO</option>
+                <option value="in_progress">In Progress</option>
+                <option value="review">Review</option>
+                <option value="done">Done</option>
+            </select>
+        </p>
+    </form>
+</body>
