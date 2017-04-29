@@ -3,30 +3,30 @@
     <title></title>
 </head>
 <body>
-    <form action="/story" method="POST">
+    <form method="POST" action="/">
         <p>
             <label for="story_title">Story title</label><br>
-            <input type="text" id="story_title">
+            <textarea name="story_title" rows="1" cols="30">{{entry.story_title}}</textarea>
         </p>
         <p>
             <label for="user_story">User story</label><br>
-            <input type="text" id="user_story">
+            <textarea name="user_story" rows="4" cols="30">{{entry.user_story}}</textarea>
         </p>
         <p>
             <label for="acceptance_criteria">Acceptance criteria</label><br>
-            <input type="text" id="acceptance_criteria">
+            <textarea name="acceptance_criteria" rows="5" cols="30">{{entry.acceptance_criteria}}</textarea>
         </p>
         <p>
             <label for="business_value">Business value</label><br>
-            <input type="number" id="business_value" step="100" min="100" max="1500">
+            <input type="number" name="business_value" step="100" min="100" max="1500" value={{entry.business_value}}>
         </p>
         <p>
             <label for="estimation">Estimation</label><br>
-            <input type="number" id="estimation" step="0.5" min="0.5" max="40">
+            <input type="number" name="estimation" step="0.5" min="0.5" max="40" value={{entry.estimation}}>
         </p>
         <p>
             <label for="status">Status</label><br>
-            <select>
+            <select name="status">
                 <option value="planning">Planning</option>
                 <option value="todo">TODO</option>
                 <option value="in_progress">In Progress</option>
@@ -34,5 +34,6 @@
                 <option value="done">Done</option>
             </select>
         </p>
+        <input type="submit" value="Create">
     </form>
 </body>
