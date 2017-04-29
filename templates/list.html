@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>Super Sprinter 3000</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Story Title</th>
+            <th>User Story</th>
+            <th>Acceptance Criteria</th>
+            <th>Business Value</th>
+            <th>Estimation</th>
+            <th>Status</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6] }}</td>
+            <td><a href="/story/{{ row[0] }}">
+                <i class="glyphicon glyphicon-edit"></i>
+                </a>
+            </td>
+            <td><a>
+                <i class="glyphicon glyphicon-trash"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
