@@ -57,7 +57,7 @@ def empty_form():
     ready to be filled out.
     '''
     entry = []
-    title = "Super Sprinter 3000 - Add new story"
+    title = "Add new story"
     submit_caption = "Create"
     return render_template('form.html', entry=entry, title=title, submit_caption=submit_caption)
 
@@ -68,7 +68,7 @@ def update_story(id=None):
     with them.'''
     data = load_from_file()
     entry = []
-    title = "Super Sprinter 3000 - Edit Story"
+    title = "Edit Story"
     submit_caption = "Update"
     for line in data:
         if line['id'] == id:
