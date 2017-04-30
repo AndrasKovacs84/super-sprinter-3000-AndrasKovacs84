@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <head>
-    <title></title>
+    <title>{{title}}</title>
 </head>
 <body>
-    <form method="POST" action="/">
+    <form method="POST" action="/{{entry.id}}">
         <p>
             <label for="story_title">Story title</label><br>
-            <textarea name="story_title" rows="1" cols="30">{{entry.story_title}}</textarea>
+            <textarea id="id_story_title" name="story_title" rows="1" cols="30" required>{{entry.story_title}}</textarea>
         </p>
         <p>
             <label for="user_story">User story</label><br>
-            <textarea name="user_story" rows="4" cols="30">{{entry.user_story}}</textarea>
+            <textarea id="id_user_story" name="user_story" rows="4" cols="30" required>{{entry.user_story}}</textarea>
         </p>
         <p>
             <label for="acceptance_criteria">Acceptance criteria</label><br>
-            <textarea name="acceptance_criteria" rows="5" cols="30">{{entry.acceptance_criteria}}</textarea>
+            <textarea id="id_acceptance_criteria" name="acceptance_criteria" rows="5" cols="30" required>{{entry.acceptance_criteria}}</textarea>
         </p>
         <p>
             <label for="business_value">Business value</label><br>
-            <input type="number" name="business_value" step="100" min="100" max="1500" value={{entry.business_value}}>
+            <input type="number" id="id_business_value" name="business_value" step="100" min="100" max="1500" value={{entry.business_value}} required>
         </p>
         <p>
             <label for="estimation">Estimation</label><br>
-            <input type="number" name="estimation" step="0.5" min="0.5" max="40" value={{entry.estimation}}>
+            <input type="number" id="id_estimation" name="estimation" step="0.5" min="0.5" max="40" value={{entry.estimation}} required>
         </p>
         <p>
             <label for="status">Status</label><br>
-            <select name="status">
-                <option value="planning">Planning</option>
-                <option value="todo">TODO</option>
-                <option value="in_progress">In Progress</option>
-                <option value="review">Review</option>
-                <option value="done">Done</option>
+            <select name="status" id="id_status" value={{entry.status}}>
+                <option value="planning"
+                    {% if entry.status == "planning" %}
+                        selected="selected"
+                    {% endif %}>Planning</option>
+                <option value="todo"
+                    {% if entry.status == "todo" %}
+                            selected="selected"
+                    {% endif %}>TODO</option>
+                <option value="in_progress"
+                    {% if entry.status == "in_progress" %}
+                        selected="selected"
+                    {% endif %}>In Progress</option>
+                <option value="review"
+                    {% if entry.status == "review" %}
+                        selected="selected"
+                    {% endif %}>Review</option>
+                <option value="done"
+                    {% if entry.status == "done" %}
+                        selected="selected"
+                    {% endif %}>Done</option>
             </select>
         </p>
-        <input type="submit" value="Create">
+        <input type="submit" id="id_create_upd_btn" value={{submit_caption}}>
     </form>
 </body>

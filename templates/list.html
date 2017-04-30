@@ -14,7 +14,7 @@
 </head>
 <body>
     <form action="/story">
-        <input type="submit" value="Add new User Story">
+        <input type="submit" id="id_new_story_btn" value="Add new User Story">
     </form>
     <table>
         <tr>
@@ -33,13 +33,13 @@
             <td>{{ row.user_story }}</td>
             <td>{{ row.acceptance_criteria }}</td>
             <td>{{ row.business_value }}</td>
-            <td>{{ row.estimation }}</td>
+            <td>{{ row.estimation }}h</td>
             <td>{{ row.status }}</td>
             <td><a href="/story/{{ row.id }}">
                 <i class="glyphicon glyphicon-edit"></i>
                 </a>
             </td>
-            <td><a href="/story/{{ row[0] }}">
+            <td><a href="/{{ row.id }}">
                 <i class="glyphicon glyphicon-trash"></i>
                 </a>
             </td>
