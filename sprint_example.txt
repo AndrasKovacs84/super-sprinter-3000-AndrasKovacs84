@@ -1,0 +1,2 @@
+1|A story title|A user story title|Some acceptance criteria is also nice|1100|3.5|in_progress
+2|Another story title|Another user story title|Some other acceptance criteria|900|1.0|todo
